@@ -15,6 +15,6 @@ export const getStarWars = () => dispatch => {
   dispatch({ type: FETCHING });
   axios
     .get("https://swapi.co/api/people")
-    .then(res => dispatch({ type: SUCCESS, payload: res.data }))
+    .then(({ data }) => dispatch({ type: SUCCESS, payload: data.results }))
     .catch(err => dispatch({ type: FAILURE, payload: err }));
 };

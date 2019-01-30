@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import { Provider } from "react-redux";
 import { applyMiddleware, createStore } from "redux";
-import rootReducer from "./reducers";
+import charsReducer from "./reducers";
 import thunk from "redux-thunk";
 import logger from "redux-logger";
 
@@ -15,7 +15,7 @@ import logger from "redux-logger";
 // rootReducer from ./reducers
 
 const store = createStore(
-  rootReducer,
+  charsReducer,
   /* applyMiddleware goes here */
   applyMiddleware(thunk, logger)
 );
